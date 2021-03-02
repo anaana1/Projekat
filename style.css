@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fredoka One", cursive;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+#okvir {
+  background-image: url("img/bgimg1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+header {
+  height: 12vh;
+  position: relative;
+}
+
+#naslov {
+  position: absolute;
+  top: 1.5vh;
+  left: 3vw;
+  font-size: 9vh;
+  font-weight: bolder;
+}
+
+#search {
+  position: absolute;
+  top: 4vh;
+  right: 3vw;
+  width: 25vw;
+  height: 5vh;
+  border-radius: 15vh;
+  
+}
+input[type="search"] {
+  padding-left: 1.5vw;
+  font-size: 2.8vh;
+  color: rgb(238, 222, 222);
+}
+
+main {
+  position: absolute;
+  top: 15vh;
+  left: 42vw;
+  
+}
+
+#first {
+  height: 40vh;
+  background: rgba(0, 0, 0, 0.1);
+  width: 25vw;
+  text-align: center;
+  border-radius: 50%;
+ 
+
+}
+
+#city {
+  font-size: 7vh;
+  padding-top: 5vh;
+  
+}
+#temp{
+    font-size: 7vh;
+    padding-top: 2vh;
+}
+
+#second{
+    height: 30vh;
+    width: 30vh;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    margin-left: 23vw;
+    font-size: 2.6vh;
+    
+}
+
+
+#feel-like{
+    padding-top: 5vh;
+    text-align: center;
+}
+
+.krug{
+    padding-top: 2vh;
+    text-align: center;
+  
+}
+
+
+hr {
+  width: 96vw;
+  margin-left: 2.5vh;
+}
+
+footer {
+  height: 9vh;
+  position: absolute;
+  bottom: 0;
+}
+#text {
+  margin-left: 15vw;
+  margin-top: 3vh;
+}
+#dugmici {
+  position: absolute;
+  bottom: 1.5vh;
+  right: 20vw;
+}
+.foot {
+  width: 8vw;
+  height: 6vh;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10vh;
+  opacity: 0.5;
+  font-size: 2.5vh;
+  border: none;
+}
+#reg {
+  margin-right: 1vw;
+}
