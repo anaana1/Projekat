@@ -40,40 +40,39 @@
           <div id="hour"></div>
           <div id="all"></div>
         </div>
-
-
-        <div id="lorreg">
-          <form id="regis" class="regis">
-            <div class='greska' id='greska'> </div>
-              <label for="uname"><b>Username</b></label><br>
-              <input type="text" placeholder="Enter Username" name="uname" required><br>
-    
-              <label for="uname"><b>Email</b></label><br>
-              <input type="text" placeholder="something@gmail.com" name="uname" required><br>
-    
-              <label for="psw"><b>Password</b></label><br>
-              <input type="password" placeholder="Enter Password" name="psw" required><br>
-        
-              <button type="submit" class="foot1" >Login</button>
-              <button type="reset" class="foot1">Cancel</button>
-    
-          </form>
-          <form id="login" class="login">
-            <div class='greska' id='greska1'> </div>
-              <label for="uname"><b>Username</b></label><br>
-              <input type="text" placeholder="Enter Username" name="uname" required><br>
-    
-              <label for="psw"><b>Password</b></label><br>
-              <input type="password" placeholder="Enter Password" name="psw" required><br>
-        
-              <button type="submit" class="foot1" >Login</button>
-              <button type="reset" class="foot1">Cancel</button>
-          </form>
-        
-        </div> 
       </main>
 
       <footer>
+        
+        <div id="logreg">
+          <form id="regis" class="obrisi">
+            <div class='greska' id='greska'> </div>
+              <label for="usname"><b>Username</b></label><br>
+              <input type="text" placeholder="Enter Username" id="usname" name="usname" ><br>
+    
+              <label for="mail"><b>Email</b></label><br>
+              <input type="text" placeholder="something@gmail.com" id="mail" name="mail"><br>
+    
+              <label for="psw"><b>Password</b></label><br>
+              <input type="password" placeholder="Enter Password" id="psw" name="psw"><br>
+        
+              <input value="Login" type="submit" class="foot1">
+              <input value="Cancel" type="reset" class="foot1" onclick="obrisiGresku()">
+          </form>
+
+          <form id="login" class="obrisi">
+            <div class='greska' id='greska1'> </div>
+              <label for="usname1"><b>Username</b></label><br>
+              <input type="text" placeholder="Enter Username" name="usname1"><br>
+    
+              <label for="psw1"><b>Password</b></label><br>
+              <input type="password" placeholder="Enter Password" id="psw1" name="psw1"><br>
+
+              <input value="Login" type="submit" class="foot1">
+              <input value="Cancel" type="reset" class="foot1" onclick="obrisiGresku()">
+        
+          </form>
+        </div>
         <hr />
         <div id="text">
           If you want to get a more detailed weather forecast, you must be
@@ -82,7 +81,7 @@
         <div id="dugmici">
           <button id="reg" class="foot">Register</button>
           <button id="log" class="foot">Log in</button>
-          <button id="logout" class="foot">Log out</button>
+          <button id="logout" class="obrisi">Log out</button>
         </div>
       </footer>
     </div>
