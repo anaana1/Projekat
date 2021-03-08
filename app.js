@@ -8,6 +8,8 @@ var feel = document.getElementById("feel-like");
 var humidity = document.getElementById("humidity");
 var windspeed = document.getElementById("windspeed");
 var pressure = document.getElementById("pressure");
+var formaReg = document.getElementById("regis");
+var formaLog = document.getElementById("login");
 
 document.getElementById("search").addEventListener("keypress", (e) => {
   if (e.key == "Enter") {
@@ -69,20 +71,20 @@ function poveziDatum(d) {
 
 var korisnik = {};
 var korisnici = [];
-var trenutnoUlogovanKOr = {};
+var ulogovan_kor = {};
 var ulogovan_korisnik = JSON.parse(localStorage.getItem("ulogovanKOR"));
-var registrujSe = document.getElementById("reg");
-var ulogujSe = document.getElementById("log");
-var izlogujSe = document.getElementById("logout");
+var registrujSe=document.getElementById("reg");
+var ulogujSe=document.getElementById("log");
+var izlogujSe=document.getElementById("logout");
 
-//ako imamo ulogovnog korisnika reg i log dugmad sakrivamo a izloguj se otkrivamo
-if (ulogovan_korisnik != null) {
-  if (ulogovan_korisnik.korIme != null) {
-    registruj.setAttribute("class", "obrisi");
+
+if (ulogovan_korisnik != null)
+  if (ulogovan_korisnik.korIme != null){
+    registrujSe.setAttribute("class", "obrisi");
     ulogujSe.setAttribute("class", "obrisi");
     izlogujSe.setAttribute("class", "foot");
   }
-}
+
 
 izlogujSe.addEventListener("click", function () {
   var prazan = {};
@@ -91,7 +93,7 @@ izlogujSe.addEventListener("click", function () {
 });
 
 registrujSe.addEventListener("click", function () {
-  var formaReg = document.getElementById("regis");
+  formaLog.setAttribute("class", "obrisi");
   if (formaReg.getAttribute("class") == "obrisi") {
     formaReg.setAttribute("class", "prikazi");
   } else if (formaReg.getAttribute("class") == "prikazi") {
@@ -154,6 +156,50 @@ registrujSe.addEventListener("click", function () {
   };
 });
 
+ulogujSe.addEventListener("click", function () {
+  var k = dohvati();
+  if (k == null) {
+    alert("There are no registered users");
+    return false;
+  } else {
+    formaReg.setAttribute("class", "obrisi");
+
+    if (formaLog.getAttribute("class") == "obrisi") {
+      formaLog.setAttribute("class", "prikazi");
+    } else if (formaLog.getAttribute("class") == "prikazi") {
+      formaLog.setAttribute("class", "obrisi");
+    }
+    formaLog.onsubmit = function () {
+      var greska1 = document.getElementById("greska1");
+      var korIme = document.getElementById("usname1").value.trim();
+      var pass = document.getElementById("psw1").value.trim();
+
+      for (let i = 0; i < k.length; i++) {
+        if (k[i].korIme == korIme) {
+          if (k[i].korIme == korIme && k[i].password == pass) {
+            ulogovan_kor.korIme = korIme;
+            ulogovan_kor.password = pass;
+            var ulS = JSON.stringify(ulogovan_kor);
+            localStorage.setItem("ulogovanKOR", ulS);
+            return;
+          } else {
+            if (k[i].korIme == korIme && k[i].password != pass) {
+              greska1.textContent = "Invalid password";
+              return false;
+            }
+          }
+        } else {
+          greska1.textContent = "Invalid username";
+          return false;
+        }
+      }
+    };
+ 
+    
+  }
+});
+
+
 //dohvata korisnika iz localStorage
 function dohvati() {
   var dohvati = localStorage.getItem("korisniciVRP");
@@ -161,6 +207,15 @@ function dohvati() {
   return k;
 }
 
-function obrisiGresku(){
-  greska.textContent="";
+function obrisiGresku() {
+  greska.textContent = "";
 }
+function obrisiGresku1() {
+  greska1.textContent = "";
+  
+}
+ function ukini(){
+  window.location.reload();
+ }
+
+

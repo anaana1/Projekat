@@ -65,7 +65,7 @@ main {
 
 #first {
   position: absolute;
-  top: 20vh;
+  top: 11vh;
   left: 42vw;
   height: 42vh;
   background: rgba(0, 0, 0, 0.1);
@@ -89,7 +89,7 @@ main {
 
 #second {
   position: absolute;
-  top: 48vh;
+  top: 40vh;
   left: 42vw;
   height: 34vh;
   width: 34vh;
@@ -146,11 +146,14 @@ footer {
   right: 0vw;
 }
 
-/* forme */
 
 .obrisi {
   display: none;
 }
+
+
+/* forme */
+
 
 #login {
   border: 1vh solid #f1f1f1;
@@ -173,6 +176,11 @@ footer {
   color: red;
   margin:1vh 5vw;
 
+}
+.ukini{
+  position: absolute;
+  top: 1vh;
+  right: 1vh;
 }
 
 input[type="text"],

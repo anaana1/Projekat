@@ -47,6 +47,7 @@
         <div id="logreg">
           <form id="regis" class="obrisi">
             <div class='greska' id='greska'> </div>
+            <div class="ukini" onclick="ukini()">X</div>
               <label for="usname"><b>Username</b></label><br>
               <input type="text" placeholder="Enter Username" id="usname" name="usname" ><br>
     
@@ -62,25 +63,26 @@
 
           <form id="login" class="obrisi">
             <div class='greska' id='greska1'> </div>
+            <div class="ukini" onclick="ukini()">X</div>
               <label for="usname1"><b>Username</b></label><br>
-              <input type="text" placeholder="Enter Username" name="usname1"><br>
+              <input type="text" placeholder="Enter Username" id="usname1" name="usname1"><br>
     
               <label for="psw1"><b>Password</b></label><br>
               <input type="password" placeholder="Enter Password" id="psw1" name="psw1"><br>
 
               <input value="Login" type="submit" class="foot1">
-              <input value="Cancel" type="reset" class="foot1" onclick="obrisiGresku()">
+              <input value="Cancel" type="reset" class="foot1" onclick="obrisiGresku1()">
         
           </form>
         </div>
-        <hr />
+        <hr/>
         <div id="text">
           If you want to get a more detailed weather forecast, you must be
           registered.
         </div>
         <div id="dugmici">
           <button id="reg" class="foot">Register</button>
-          <button id="log" class="foot">Log in</button>
+          <button id="log" class="foot">Login</button>
           <button id="logout" class="obrisi">Log out</button>
         </div>
       </footer>
